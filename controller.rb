@@ -4,10 +4,12 @@ require_relative './models/game'
 
 get '/:move1/:move2' do
   game = Game.new(params)
-  return game.result()
+  @result = game.result()
+  erb(:result)
 end
 
-get '/:move1/' do
+get '/:move1' do
   game = Game.new(params)
-  return game.result()
+  @result = game.result()
+  erb(:result)
 end
